@@ -11,6 +11,12 @@ export class AuthService {
         private readonly jwtService: JwtService
     ) { }
 
+    /**
+     * Validates a user by checking if the provided username and password match the stored credentials.
+     * @param username - The username to validate.
+     * @param pass - The password to validate (optional).
+     * @returns A user object if validation is successful, or null otherwise.
+     */
     async validateUser(username: string, pass?: string) {
         const user = await this.userService.findWithName(username);
         if (user && (await bcrypt.compare(pass, user.password))) {
@@ -20,6 +26,11 @@ export class AuthService {
         return null;
     }
 
+    /**
+     * Handles the user login process, generates JWT tokens, and returns them.
+     * @param user - The user object containing login details.
+     * @returns An object with user details, access token, and refresh token.
+     */
     async login(user: any){
 
         const userDB = await this.userService.findWithName(user.name);
@@ -39,6 +50,11 @@ export class AuthService {
         };
     }
 
+    /**
+     * Handles the token refresh process and returns a new access token.
+     * @param user - The user object containing necessary details for token refresh.
+     * @returns An object with a new access token.
+     */
     async refresh(user: any){
         const payload = {
             username: user.email,

@@ -31,6 +31,6 @@ export class UserController {
     @Role('USER')
     @UseGuards(JwtGuard,RoleGuard)
     async protected() {
-        return 'protected';
+        return 'This is a protected route';
     }
 }

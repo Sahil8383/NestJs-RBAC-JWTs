@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  nestjs-app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  prisma:
+    build:
+      context: .
+      dockerfile: Dockerfile.prisma
+    command: generate
+    depends_on:
+      - mongodb
