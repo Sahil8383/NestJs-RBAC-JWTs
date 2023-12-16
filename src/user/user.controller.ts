@@ -16,7 +16,7 @@ export class UserController {
     }
 
     @Get(':id')
-    @Role('ADMIN')
+    @Role('ADMIN') 
     @UseGuards(JwtGuard,RoleGuard)
     async getUserById(@Param('id') id: string) {
         return this.userService.getUserById(id);

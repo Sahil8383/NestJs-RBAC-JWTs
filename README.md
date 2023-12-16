@@ -93,13 +93,6 @@ The `UserController` manages user-related routes, including fetching all users, 
 - Roles, represented as an enum or string, determine access to specific routes.
 - Routes are guarded based on the user's role, allowing fine-grained control over resource access.
 
-## Getting Started
-
-1. Clone the repository: `git clone <repository-url>`
-2. Install dependencies: `npm install`
-3. Configure environment variables, including the JWT secret and MongoDB connection details.
-4. Start the application: `npm run start`
-
 ## Conclusion
 
 This NestJS project demonstrates a robust authentication and authorization system using JWT Strategy and Guards. It allows for secure user authentication, role assignment, and controlled access to various routes based on the user's role. Customize the implementation further to meet the specific needs of your project.

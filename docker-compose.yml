@@ -12,14 +12,13 @@ services:
     image: mongo:latest
     ports:
       - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+    env_file:
+      - .env  
 
   prisma:
     build:
       context: .
-      dockerfile: Dockerfile.prisma
+      dockerfile: ./Dockerfile
     command: generate
     depends_on:
       - mongodb
