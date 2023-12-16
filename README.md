@@ -17,6 +17,10 @@ Follow these steps to set up and run the project locally:
    ```bash
    npm run start:dev
 
+Following steps are for docker setup:
+1. **Run the following command:**
+   ```bash
+   docker-compose up -d
 ## Auth Resource
 
 ### AuthController
