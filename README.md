@@ -2,6 +2,21 @@
 
 This repository contains a NestJS project that implements Role-Based Access Control (RBAC) using JWT Strategy and Guards. The project includes three main resources: Auth, Database, and Users.
 
+## Installation and Setup
+
+Follow these steps to set up and run the project locally:
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/Sahil8383/NestJs-RBAC-JWTs.git
+   cd NestJs-RBAC-JWTs
+2. **Install the Dependencies:**
+   ```bash
+   npm install
+3. **Run the project with the below command:**
+   ```bash
+   npm run start:dev
+
 ## Auth Resource
 
 ### AuthController
